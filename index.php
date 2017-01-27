@@ -6,7 +6,6 @@ require BASEPATH . '/Controllers/RoomController.php';
 
 if (!isset($_GET["page"])) {
 	(new AuthentificationController)->home();
-} 
-else if ($_GET["page"] === "tchatroom"){
+} else if ($_GET["page"] === "tchatroom"){
 	(new RoomController)->room();
 }

@@ -11,6 +11,9 @@ class RoomController {
 
 	public function __construct() {
 		$this->pseudo = $_POST["pseudo"];
+		if ($_POST["pseudo"] === "") {
+			$this->pseudo = "Anonyme";
+		}
 	}
 
 	public function getPseudo() {
