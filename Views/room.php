@@ -25,10 +25,17 @@
 					</div>
 				<?php endforeach ?>
 			</div>
-		</div>
-		<div class="saisie">
-			<form action="">
-				FORMULAIRE DE SAISIE
+			<form action="/index.php?page=tchatroom" method="post">
+				<input type="hidden" name="pseudo" value="<?=$room->getPseudo()?>">
+				<div>
+					<label for="message">Saisir votre message : </label>
+				</div>
+				<div class="field">
+					<textarea name="message" id="message" cols="90" rows="5"></textarea>
+				</div>
+				<div>
+					<input class="ui fluid button" type="submit" value="Envoyer">
+				</div>
 			</form>
 		</div>
 	</div>

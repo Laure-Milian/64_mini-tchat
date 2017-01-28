@@ -19,6 +19,9 @@ class RoomController {
 		} else {
 		$this->pseudo = $_POST["pseudo"];
 		}
+		if (isset($_POST["message"])) {
+			$this->addEntry();
+		}
 	}
 
 	public function getPseudo() {
@@ -27,6 +30,13 @@ class RoomController {
 
 	public function getAllEntries() {
 		return $this->bdd->getAllEntries();
+	}
+
+	public function addEntry() {
+		$pseudo = $this->pseudo;
+		$date = "2017-01-22";
+		$message = $_POST["message"];
+		$this->bdd->addEntry($pseudo, $date, $message);
 	}
 
 }

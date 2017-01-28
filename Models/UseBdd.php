@@ -7,14 +7,14 @@ class UseBdd {
 		return $entries;
 	}
 
-	public function addMessage() {
+	public function addEntry($pseudoNew, $dateNew, $messageNew) {
 		$number_of_entries = ORM::for_table('messages')->count();
 
 		$newEntry = ORM::for_table('messages')->create();
-		$newEntry->id = $number_of_entries;
-		$newEntry->pseudo = "Franck";
-		$newEntry->date = "2017-01-22";
-		$newEntry->message = "Hello there";
+		$newEntry->id = $number_of_entries + 1;
+		$newEntry->pseudo = $pseudoNew;
+		$newEntry->date = $dateNew;
+		$newEntry->message = $messageNew;
 		$newEntry->save();
 	}
 
