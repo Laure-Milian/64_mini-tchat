@@ -1,3 +1,7 @@
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/semantic-ui/2.2.6/semantic.min.css">
+<link rel="stylesheet" href="style.css">
+
 <?php
 define('BASEPATH', __DIR__);
 
@@ -10,10 +14,6 @@ ORM::configure('username', 'root');
 ORM::configure('password', 'simplonco');
 
 ORM::configure('return_result_sets', true);
-
-ORM::for_table('messages')->find_result_set();
-$person = ORM::for_table('messages')->where('pseudo', 'Lou')->find_one();
-echo $person->pseudo;
 
 
 if (!isset($_GET["page"])) {
