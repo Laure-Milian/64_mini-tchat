@@ -15,6 +15,8 @@ ORM::configure('password', 'simplonco');
 
 ORM::configure('return_result_sets', true);
 
+// ORM::raw_execute("ALTER TABLE messages ADD id INT PRIMARY KEY AUTO_INCREMENT");
+
 
 if (!isset($_GET["page"])) {
 	(new AuthentificationController)->home();
