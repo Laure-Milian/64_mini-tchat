@@ -34,7 +34,7 @@ class RoomController {
 
 	public function addEntry() {
 		$pseudo = $this->pseudo;
-		$date = "2017-01-22";
+		$date = date("Y-m-d");
 		$message = htmlspecialchars($_POST["message"]);
 		$this->bdd->addEntry($pseudo, $date, $message);
 	}
