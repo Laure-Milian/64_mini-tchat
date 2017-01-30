@@ -17,7 +17,7 @@ class RoomController {
 		if ($_POST["pseudo"] === "") {
 			$this->pseudo = "Anonyme";
 		} else {
-		$this->pseudo = $_POST["pseudo"];
+		$this->pseudo = htmlspecialchars($_POST["pseudo"]);
 		}
 		if (isset($_POST["message"])) {
 			$this->addEntry();
@@ -35,7 +35,7 @@ class RoomController {
 	public function addEntry() {
 		$pseudo = $this->pseudo;
 		$date = "2017-01-22";
-		$message = $_POST["message"];
+		$message = htmlspecialchars($_POST["message"]);
 		$this->bdd->addEntry($pseudo, $date, $message);
 	}
 
